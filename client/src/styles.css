@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #c3e2ff;
+  background-color: var(--bg0);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Collors */
+  --primary: rgb(3, 255, 125);
+  /* darken --primary: rgb(3, 255, 125); */
+  --primary-dark: #091f2c;
+
+  --secondary: #ff037d;
+  --tertiary: #ff7d03;
+  --quaternary: #d5ff03;
+  --quinary: #03d5ff;
+
+  /* gradients */
+  /* 5 collor gradient from --priomary to --septenary */
+
+  --gradient0: conic-gradient(
+    from 30deg,
+    var(--primary),
+    var(--tertiary),
+    var(--quinary)
+  );
+  --gradient1: conic-gradient(
+    from 0deg,
+    var(--primary) -5%,
+    var(--quinary) 5%,
+    var(--bg0) 10%
+  );
+
+  --primary-gradient: linear-gradient(3#107071, #14b643, var(--primary-dark));
+  /* Backgrounds */
+  --bg0: #0c0c12;
+  --bg1: #1c1c24;
+  --bg2: #2c2c36;
+  --bg3: #3c3c48;
+  --bg4: #4c4c5a;
+  --bg5: #5c5c6c;
+  --bg6: #9b9bb3;
+}
+
+.container-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-image: url(./assets/gradient.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
