@@ -1,0 +1,12 @@
+.NavDef {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2em;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+}

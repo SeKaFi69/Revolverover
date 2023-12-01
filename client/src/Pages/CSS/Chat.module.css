@@ -1,0 +1,88 @@
+.chat {
+  grid-area: chat;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6vh 74vh 10vh;
+  grid-template-areas:
+    "nav"
+    "messages"
+    "input";
+}
+
+.chat nav {
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--bg3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.chat nav p {
+  font-size: 1.2rem;
+}
+
+.chat::-webkit-scrollbar {
+  display: none;
+}
+.chat__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10rem;
+  height: 100%;
+  gap: 0.5rem;
+}
+.chat__buttons svg {
+  width: 2rem;
+
+  border-radius: 50%;
+  fill: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0.1rem;
+}
+.chat__input {
+  position: absolute;
+  bottom: 0;
+  grid-area: input;
+  width: 100%;
+  min-height: 10vh;
+  max-height: 20vh;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  grid-template-rows: 1fr;
+  background-color: var(--bg1);
+  gap: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+.messages {
+  grid-area: messages;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.message {
+  display: grid;
+  width: 70%;
+  max-height: 19vh;
+  overflow: hidden;
+  resize: vertical;
+  line-height: 1.5rem;
+  border-radius: 1em;
+  background-color: var(--bg2);
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  overflow-y: auto;
+}

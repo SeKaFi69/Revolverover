@@ -1,0 +1,54 @@
+.loader {
+  height: 40vh;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  animation: rotate 3s ease infinite;
+
+  grid-area: main;
+}
+.loader::before {
+  content: "";
+  background: var(--gradient0);
+  border-radius: inherit;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  animation: rotate2 3s ease infinite;
+}
+.loader::after {
+  content: "";
+  background-image: url("../../assets/logoMain.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  border-radius: inherit;
+  position: absolute;
+  inset: 0.5em;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}

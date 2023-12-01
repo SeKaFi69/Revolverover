@@ -43,6 +43,7 @@
   );
 
   --primary-gradient: linear-gradient(3#107071, #14b643, var(--primary-dark));
+
   /* Backgrounds */
   --bg0: #0c0c12;
   --bg1: #1c1c24;
@@ -51,16 +52,34 @@
   --bg4: #4c4c5a;
   --bg5: #5c5c6c;
   --bg6: #9b9bb3;
+
+  /* transparent backgrounds */
+  --tBg2: rgba(44, 44, 54, 0.5);
+
+  /* Text */
+  --text1: #b3daff;
+  --text2: #93cafe;
+}
+.meshgradient {
+  background-color: hsla(0, 100%, 50%, 1);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(28, 100%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
 }
 
 .container-nav {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10vh 1fr;
-  grid-template-areas:
-    "nav"
-    "main";
-
+  grid-template-areas: "nav" "main";
   place-items: center;
   height: 100vh;
   width: 100vw;
@@ -71,4 +90,57 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
+}
+/* input type text */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg2);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5em;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: var(--bg3);
+  color: var(--primary);
+}
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before,
+.shine::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 1em;
+  z-index: 10;
+  top: 20%;
+  left: -120%;
+  transform: rotate(-45deg) translateX(0);
+  opacity: 0;
+  box-shadow: 0px 0px 15px white;
+  background-color: white;
+
+  transition: 0.5s;
+}
+.shine:hover::before,
+.shine:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  transform: translateX(100%) rotate(-45deg);
+  opacity: 1;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  /* dont work on reload */
 }

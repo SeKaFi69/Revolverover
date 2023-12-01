@@ -1,0 +1,46 @@
+input {
+  grid-area: input;
+  height: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: var(--bg2);
+  color: var(--text1);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.nick {
+  grid-area: nickname;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.75em;
+  height: min-content;
+  position: relative;
+  width: 100%;
+  background-color: var(--bg2);
+  padding: 0.5em;
+}
+.nick * {
+  background: none;
+}
+.nick input {
+  width: 100%;
+  font-weight: 700;
+  height: 1.5rem;
+
+  padding: 0;
+}
+.nick .lock,
+.nick .unlock {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.nick .lock {
+  fill: var(--secondary);
+}
+.nick .unlock {
+  fill: var(--primary);
+}

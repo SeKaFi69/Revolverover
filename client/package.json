@@ -2,7 +2,6 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:5000",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +10,9 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@iconscout/react-unicons": "^2.0.2",
     "@tauri-apps/api": "^1.5.1",
+    "bcrypt-ts": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0"
