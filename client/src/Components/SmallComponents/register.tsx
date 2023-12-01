@@ -30,10 +30,11 @@ const Register = () => {
     setUsername(e.target[0].value);
 
     const salt = bcrypt.genSaltSync(10);
+
     setPassword(bcrypt.hashSync(e.target[2].value, salt));
 
     const file = e.target[3].files[0];
-    console.log(username, email, password, file);
+    console.log(username, password, file);
 
     try {
       //Create user
